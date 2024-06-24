@@ -18,6 +18,7 @@ global_asm!(
         // Load user state
         pop {{r4, r5, r6, r7, r8, r9, r10, r11, lr}}
 
+        // Jump to user task
         bx lr
     "#
 );
