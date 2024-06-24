@@ -2,9 +2,13 @@
 #![no_main]
 #![no_std]
 use core::panic::PanicInfo;
+mod uart;
+use uart::{uart_init, uart_print};
 
 #[no_mangle]
 pub unsafe extern "C" fn Reset() -> ! {
+    uart_init();
+    uart_print("Hello World\n");
     loop {}
 }
 
